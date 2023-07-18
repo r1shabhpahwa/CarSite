@@ -1,0 +1,37 @@
+/* Default styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+/* Class styles */
+.hbar1 {
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  background-color: #d3d3d3;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hbar1:hover {
+  background-color: #d32f2f;
+}

@@ -1,0 +1,20 @@
+{% extends 'carapp/base.html' %}
+{% block body_block %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>Car Site</title>
+</head>
+<body>
+<h2>Available Vehicles</h2>
+<ul>
+    {% for vehicle in vehicles %}
+        <li><a href="{% url 'carapp:order' %}">{{ vehicle.car_name }}</a></li>
+    {% empty %}
+        <li>No vehicles available.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+{% endblock %}

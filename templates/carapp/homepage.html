@@ -1,0 +1,25 @@
+{% extends 'carapp/base.html' %}
+{% block body_block %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>Car Site</title>
+</head>
+
+<body>
+
+<h1>Welcome to Our Car Store!</h1>
+{% if cartype_list %}
+  <h2 class="heading">Type of Cars</h2>
+  <ol class="car-list">
+    {% for cartype in cartype_list%}
+    <li><a href="{% url 'carapp:cardetail' cartype.id %}">{{ cartype.name }}</a></li>
+    {% endfor %}
+  </ol>
+{% else %}
+  <strong class="not-available">None of the car types are available!</strong>
+{% endif %}
+</body>
+</html>
+{% endblock %}

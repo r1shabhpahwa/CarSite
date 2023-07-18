@@ -1,0 +1,17 @@
+{% extends 'carapp/base.html' %}
+{% block body_block %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Details</title>
+</head>
+<body>
+  <h2>Following are the Vehicles in {{ car_type.name }} with Cartype No {{ car_type.id }}:</h2>
+  <ul>
+    {% for vehicle in vehicle_list %}
+      <li>{{ vehicle }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
+{% endblock %}

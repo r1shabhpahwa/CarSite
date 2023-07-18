@@ -1,0 +1,18 @@
+{% extends 'carapp/base.html' %}
+{% block body_block %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>About Us</h2>
+    <p>This is a Car Showroom</p>
+<div class="jumbotron mt-4">
+    <p>Session Counter: {{ session_counter }}</p>
+    <p>Cookie Counter: {{ request.COOKIES.cookie_counter }}</p>
+</div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="{% static 'carapp/style.css' %}"/>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ <title> CarSite - {% block title %} Welcome! {% endblock %}</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <a class="navbar-brand" href="{% url 'carapp:homepage' %}">CarSite</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarNav">
+   <ul class="navbar-nav">
+       <li class="nav-item">
+       <a class="nav-link" href="{% url 'carapp:homepage' %}">Homepage</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="{% url 'carapp:aboutus' %}">About Us</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="{% url 'carapp:vehicles' %}">View all Vehicles</a>
+     </li>
+       <li class="nav-item">
+           <a class="nav-link" href="{% url 'carapp:my_orders' %}">My Orders</a>
+       </li>
+     <li class="nav-item">
+       <a class="nav-link" href="{% url 'carapp:search' %}">Search</a>
+     </li>
+   </ul>
+   <ul class="navbar-nav ml-auto">
+     {% if request.user.is_authenticated %}
+     <li class="nav-item">
+       <a class="nav-link" href="{% url 'carapp:logout' %}">Logout</a>
+     </li>
+    {% else %}
+       <li class="nav-item">
+       <a class="nav-link" href="{% url 'carapp:login' %}">Login</a>
+     </li>
+    {% endif %}
+   </ul>
+ </div>
+</nav>
+<div class="container">
+    {% block body_block %}{% endblock %}
+</div>
+</body>
+</html>
